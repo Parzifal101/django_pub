@@ -1,0 +1,33 @@
+{% extends 'diary/base.html' %}
+
+{% block content %}
+<h2>Профиль пользователя</h2>
+<form method="post">
+    {% csrf_token %}
+    <div style="margin-bottom: 10px;">
+        <label for="full_name">ФИО:</label>
+        {% if profile.full_name %}
+        <p style="padding: 2px 3px; border: 1px solid #ccc; border-radius: 4px;">{{ profile.full_name }}</p>
+        {% else %}
+        <input style="padding: 2px 3px; border: 1px solid #ccc; border-radius: 4px; transition: border-color 0.3s ease;" type="text" name="full_name" id="full_name" value="{{ profile.full_name }}" required>
+        {% endif %}
+    </div>
+    <div style="margin-bottom: 10px;">
+        <label for="email">Электронная почта:</label>
+        {% if profile.email %}
+        <p style="padding: 2px 3px; border: 1px solid #ccc; border-radius: 4px;">{{ profile.email }}</p>
+        {% else %}
+        <input style="padding: 2px 3px; border: 1px solid #ccc; border-radius: 4px; transition: border-color 0.3s ease;" type="email" name="email" id="email" value="{{ profile.email }}" required>
+        {% endif %}
+    </div>
+    <div style="margin-bottom: 10px;">
+        <label for="phone">Телефон:</label>
+        {% if profile.phone %}
+        <p style="padding: 2px 3px; border: 1px solid #ccc; border-radius: 4px;">{{ profile.phone }}</p>
+        {% else %}
+        <input style="padding: 2px 3px; border: 1px solid #ccc; border-radius: 4px; transition: border-color 0.3s ease;" type="text" name="phone" id="phone" value="{{ profile.phone }}">
+        {% endif %}
+    </div>
+    <button style="color: white; padding: 6px; background-color: darkgrey; border: 0; border-radius: 4px;" type="submit">Сохранить</button>
+</form>
+{% endblock %}

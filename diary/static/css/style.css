@@ -1,0 +1,22 @@
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+}

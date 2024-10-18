@@ -1,0 +1,16 @@
+{% extends 'diary/base.html' %}
+
+{% block content %}
+<h2>Вход в систему</h2>
+<form method="post" style="display: flex; flex-direction: row;">
+    {% csrf_token %}
+    <div><label for="username">Имя пользователя:</label>
+        <input type="text" name="username" id="username" required>
+    </div><br>
+    <div style="padding-left: 6%;"><label for="password">Пароль:</label>
+        <input type="password" name="password" id="password" required>
+    </div><br>
+    <button style="margin-left: 2%; color: white; background-color: darkgrey; border: 0; border-radius: 4px;"
+        type="submit">Войти</button>
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'diary/base.html' %}
+
+{% block content %}
+<h2>Категории:</h2>
+<ul>
+    {% for category in categories %}
+    <li><a style="text-decoration: none; color: white; background-color: darkgrey; padding: 6px; border-radius: 12px;"
+            href="{% url 'category_detail' category.slug %}">{{ category.name }}</a></li>
+    {% empty %}
+    <li>Категории отсутствуют.</li>
+    {% endfor %}
+
+</ul>
+{% endblock %}

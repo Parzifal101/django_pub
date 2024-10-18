@@ -1,0 +1,12 @@
+{% extends 'diary/base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>{% if task %}Редактировать{% else %}Создать{% endif %} задачу</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button style=" padding: 6px; color: white; background-color: darkgrey; border: 0; border-radius: 4px;"
+        type="submit">Сохранить</button>
+</form>
+{% endblock %}
